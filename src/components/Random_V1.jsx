@@ -23,7 +23,7 @@ function Random_V1() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Random</h1>
       <img width="500" src={gif} alt="random" />
       <button onClick={handleClick}>ANOTHER ONE</button>
