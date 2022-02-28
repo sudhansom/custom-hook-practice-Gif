@@ -8,17 +8,19 @@ function Random_V1() {
   useEffect(() => {
     const fetchGif = async () => {
       const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
-      const data = await axios.get(url);
-      const { imageSrc } = data.data.images.downsized_large.url;
+      const { data } = await axios.get(url);
+      console.log(data.data.images.downsized_large.url);
+      const imageSrc = data.data.images.downsized_large.url;
       setGif(imageSrc);
     };
     fetchGif();
-  });
+  }, []);
 
   return (
-    <>
+    <div>
       <h1>Random</h1>
-    </>
+      <img width="500" src={gif} alt="random" />
+    </div>
   );
 }
 
