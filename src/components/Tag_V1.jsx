@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-function Tag_V1() {
+function Tag() {
   const [gif, setGif] = useState("");
   const [tag, setTag] = useState("dogs");
 
@@ -39,4 +39,4 @@ function Tag_V1() {
   );
 }
 
-export default Tag_V1;
+export default Tag;

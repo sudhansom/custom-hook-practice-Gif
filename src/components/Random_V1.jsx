@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-function Random_V1() {
+function Random() {
   const [gif, setGif] = useState("");
 
   const fetchGif = async () => {
@@ -23,7 +23,7 @@ function Random_V1() {
   };
 
   return (
-    <div className="container">
+    <div>
       <h1>Random</h1>
       <img width="500" src={gif} alt="random" />
       <button onClick={handleClick}>ANOTHER ONE</button>
@@ -31,4 +31,4 @@ function Random_V1() {
   );
 }
 
-export default Random_V1;
+export default Random;

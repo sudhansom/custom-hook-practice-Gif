@@ -7,20 +7,17 @@ const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
 function useGif(tag) {
   const [gif, setGif] = useState("");
 
-  const fetchGif = async () => {
-    const { data } = await axios.get(tag ? `url&tag${tag}` : url);
+  const fetchGif = async (tag) => {
+    const { data } = await axios.get(tag ? `${url}&tag=${tag}` : url);
     const imageSrc = data.data.images.downsized_large.url;
     setGif(imageSrc);
   };
 
-  useEffect(
-    (tag) => {
-      fetchGif(tag);
-    },
-    [tag]
-  );
+  useEffect(() => {
+    fetchGif(tag);
+  }, [tag]);
 
-  return { gif, useGif };
+  return { gif, fetchGif };
 }
 
 export default useGif;
