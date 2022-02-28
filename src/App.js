@@ -7,7 +7,7 @@ import Tag_V1 from "./components/Tag_V1";
 const App = () => (
   <div>
     <h1>A Simple Gif App</h1>
-    <div className="main-content">
+    <div className="main-container">
       <Random_V1 />
       <Tag_V1 />
     </div>
